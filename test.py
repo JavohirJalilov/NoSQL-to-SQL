@@ -3,8 +3,8 @@ from tinydb import TinyDB
 db = TinyDB('data.json')
 
 tables = list(db.tables())
-table = db.table(tables[1])
-
+table = db.table(tables[0])
+print(table)
 data = table.all()
 
 url = 'http://127.0.0.1:8000/api/add/'
