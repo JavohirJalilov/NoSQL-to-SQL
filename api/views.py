@@ -11,6 +11,9 @@ def smartphones(request: HttpRequest) -> JsonResponse:
             "id": i.pk,
             "name": i.name,
             "price": i.price,
+            "memory": i.memory,
+            "ram": i.ram,
+            "color": i.color,
         })
 
     return JsonResponse({'result': result})
@@ -33,7 +36,7 @@ def add_smartphone(request: HttpRequest) -> JsonResponse:
         smartphone.save()
 
         return JsonResponse({"result": "OK"})
-    return JsonResponse({"result": "OK"})
+    return JsonResponse({"result": "failed, only POST request"})
 
 
 def get_smartphone(request: HttpRequest,id) -> JsonResponse:
