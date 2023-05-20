@@ -14,6 +14,8 @@ def smartphones(request: HttpRequest) -> JsonResponse:
             "memory": i.memory,
             "ram": i.ram,
             "color": i.color,
+            "created": i.created,
+            "updated": i.updated,
         })
 
     return JsonResponse({'result': result})
